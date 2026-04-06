@@ -1,3 +1,3 @@
 * Vyper Smart Contracts
 
-* DeFi
+* Web3 & DeFi
