@@ -20,13 +20,14 @@ def __init__():
 
     self.price_feed_address = ETH_USD_FEED_SEPOLIA
 
+
 @external
 @payable
 def fund_me():
 
     eth_price_as_wei: uint256 = self._get_latest_wei_usd_price() # returns eth wei price, 10 ** 18
 
-    usd_value: uint256 = (msg.value * eth_price_as_wei) / 10 ** 18 # msg.value -> wei, 10 ** 18 => 10 ** 36 / 10 ** 18 = 10 ** 18
+    usd_value: uint256 = (msg.value * eth_price_as_wei) // 10 ** 18 # msg.value -> wei, 10 ** 18 => 10 ** 36 / 10 ** 18 = 10 ** 18
     
     assert usd_value >= MIN_FUND_AMOUNT_USD * 10 ** 18, "At least $10!"
 
