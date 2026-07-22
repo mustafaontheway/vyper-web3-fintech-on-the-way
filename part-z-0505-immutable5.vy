@@ -23,7 +23,6 @@ def __init__():
 # Finally, convert 'discounted_amount' from decimal to uint256
 
 @external
-@view
 def calculate_discount(amount: uint256) -> uint256:
 
     amount_in_decimal: decimal = convert(amount, decimal)
